@@ -40,13 +40,14 @@ const CategorySelector = ({ onSelect }) => {
   ]
 
   return (
-    <div className="fixed inset-0 bg-slate-50 z-[100] flex flex-col items-center justify-start md:justify-center p-6 overflow-y-auto">
-      <div className="w-full max-w-7xl mx-auto py-12 flex flex-col items-center">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8 md:mb-12"
-        >
+    <div className="fixed inset-0 bg-slate-50 z-[100] overflow-y-auto overflow-x-hidden">
+      <div className="min-h-full w-full flex flex-col items-center justify-start md:justify-center p-6 py-12">
+        <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-8 md:mb-12"
+          >
           <div className="bg-brand-900 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-xl shadow-brand-900/20">
             <ElephantIcon className="w-8 h-8 md:w-10 md:h-10 text-white" />
           </div>
@@ -83,6 +84,7 @@ const CategorySelector = ({ onSelect }) => {
       <p className="mt-12 text-slate-400 text-xs font-bold uppercase tracking-[0.2em]">
         © 2026 THE ELEPHANT IN THE ROOM • MEDIATOR AI
       </p>
+        </div>
       </div>
     </div>
   )
