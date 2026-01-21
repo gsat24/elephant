@@ -384,43 +384,43 @@ const LandingPage = ({ onNavigate, activeSegment, onSwitchMode }) => {
       </div>
 
       {/* Bottom Navigation - Hidden on Desktop */}
-      <div className="fixed bottom-8 left-6 right-6 z-50 lg:hidden">
-        <div className="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-4 shadow-2xl shadow-brand-900/10 border border-white/50 flex justify-between items-center relative">
+      <div className="fixed bottom-4 left-6 right-6 z-50 lg:hidden">
+        <div className="bg-white/90 backdrop-blur-2xl rounded-3xl p-2 shadow-2xl shadow-brand-900/10 border border-white/50 flex justify-between items-center relative">
           <button 
             onClick={() => onNavigate('landing')}
-            className={`p-4 rounded-2xl transition-all ${activeSegment ? 'text-brand-900 bg-brand-50' : 'text-slate-300'}`}
+            className={`p-3 rounded-xl transition-all ${activeSegment ? 'text-brand-900 bg-brand-50' : 'text-slate-300'}`}
           >
-            <Home className="w-6 h-6" />
+            <Home className="w-5 h-5" />
           </button>
           <button 
             onClick={() => onNavigate('konseling-ai')}
-            className="p-4 text-slate-300 hover:text-brand-400 transition-all"
+            className="p-3 text-slate-300 hover:text-brand-400 transition-all"
           >
-            <BookOpen className="w-6 h-6" />
+            <BookOpen className="w-5 h-5" />
           </button>
           
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2">
             <motion.button 
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => onNavigate('sync')}
-              className="bg-brand-900 text-white p-5 rounded-full shadow-2xl shadow-brand-900/40 border-4 border-[#F8FAFC]"
+              className="bg-brand-900 text-white p-4 rounded-full shadow-2xl shadow-brand-900/40 border-4 border-[#F8FAFC]"
             >
-              <ElephantIcon className="w-7 h-7" />
+              <ElephantIcon className="w-6 h-6" />
             </motion.button>
           </div>
 
           <button 
             onClick={() => onNavigate('curhat')}
-            className="p-4 text-slate-300 hover:text-brand-400 transition-all"
+            className="p-3 text-slate-300 hover:text-brand-400 transition-all"
           >
-            <Users className="w-6 h-6" />
+            <Users className="w-5 h-5" />
           </button>
           <button 
             onClick={() => onSwitchMode()}
-            className="p-4 text-slate-300 hover:text-brand-400 transition-all"
+            className="p-3 text-slate-300 hover:text-brand-400 transition-all"
           >
-            <User className="w-6 h-6" />
+            <User className="w-5 h-5" />
           </button>
         </div>
       </div>
