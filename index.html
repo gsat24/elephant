@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/elephanticon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>elephant-app</title>
+  </head>
+  <body>
+    <div id="root">
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #666;">
+        Memuat aplikasi... (Jika tetap putih, cek Console di Safari)
+      </div>
+    </div>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        var message = [
+          'Message: ' + msg,
+          'URL: ' + url,
+          'Line: ' + lineNo,
+          'Column: ' + columnNo,
+          'Error object: ' + JSON.stringify(error)
+        ].join('\n');
+        console.error("Global Error Caught:", message);
+        document.getElementById('root').innerHTML = '<div style="padding: 20px; color: red;"><h1>Runtime Error!</h1><pre>' + message + '</pre></div>';
+        return false;
+      };
+      console.log("Index.html: Script monitoring active");
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

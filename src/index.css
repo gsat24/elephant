@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-50: #f0f4f8;
+  --brand-100: #d9e2ec;
+  --brand-200: #bcccdc;
+  --brand-300: #9fb3c8;
+  --brand-400: #829ab1;
+  --brand-500: #627d98;
+  --brand-600: #486581;
+  --brand-700: #334e68;
+  --brand-800: #243b53;
+  --brand-900: #102a43;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+    background-color: #F8FAFC;
+    color: #102a43;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Fallback Classes if Tailwind Fails */
+.text-brand-900 { color: var(--brand-900) !important; }
+.bg-brand-900 { background-color: var(--brand-900) !important; }
+.text-brand-200 { color: var(--brand-200) !important; }
+.bg-brand-50 { background-color: var(--brand-50) !important; }
+.border-brand-100 { border-color: var(--brand-100) !important; }
+
