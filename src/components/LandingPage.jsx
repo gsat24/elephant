@@ -205,7 +205,7 @@ const LandingPage = ({ onNavigate, activeSegment, onSwitchMode }) => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+                className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
               >
                 {activeSegment === 'b2c' && (
                   <>
@@ -386,10 +386,16 @@ const LandingPage = ({ onNavigate, activeSegment, onSwitchMode }) => {
       {/* Bottom Navigation - Hidden on Desktop */}
       <div className="fixed bottom-8 left-6 right-6 z-50 lg:hidden">
         <div className="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-4 shadow-2xl shadow-brand-900/10 border border-white/50 flex justify-between items-center relative">
-          <button className="p-4 text-brand-900 bg-brand-50 rounded-2xl transition-all">
+          <button 
+            onClick={() => onNavigate('landing')}
+            className={`p-4 rounded-2xl transition-all ${activeSegment ? 'text-brand-900 bg-brand-50' : 'text-slate-300'}`}
+          >
             <Home className="w-6 h-6" />
           </button>
-          <button className="p-4 text-slate-300 hover:text-brand-400 transition-all">
+          <button 
+            onClick={() => onNavigate('konseling-ai')}
+            className="p-4 text-slate-300 hover:text-brand-400 transition-all"
+          >
             <BookOpen className="w-6 h-6" />
           </button>
           
@@ -404,10 +410,16 @@ const LandingPage = ({ onNavigate, activeSegment, onSwitchMode }) => {
             </motion.button>
           </div>
 
-          <button className="p-4 text-slate-300 hover:text-brand-400 transition-all">
+          <button 
+            onClick={() => onNavigate('curhat')}
+            className="p-4 text-slate-300 hover:text-brand-400 transition-all"
+          >
             <Users className="w-6 h-6" />
           </button>
-          <button className="p-4 text-slate-300 hover:text-brand-400 transition-all">
+          <button 
+            onClick={() => onSwitchMode()}
+            className="p-4 text-slate-300 hover:text-brand-400 transition-all"
+          >
             <User className="w-6 h-6" />
           </button>
         </div>
@@ -438,7 +450,7 @@ const ToolButton = ({ icon, label, desc, onClick, showFull = true }) => (
       whileHover={{ y: -4, shadow: "0 15px 20px -5px rgb(0 0 0 / 0.05)" }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="bg-white rounded-2xl lg:rounded-3xl p-5 lg:p-6 shadow-sm border border-slate-100 flex flex-col justify-between h-44 lg:h-52 cursor-pointer relative overflow-hidden group transition-all duration-300"
+      className="bg-white rounded-2xl lg:rounded-3xl p-5 lg:p-6 shadow-sm border border-slate-100 flex flex-col justify-between min-h-[11rem] lg:min-h-[13rem] cursor-pointer relative overflow-hidden group transition-all duration-300"
     >
       {tag && (
         <div className="absolute top-4 right-4 lg:top-5 lg:right-5">
