@@ -1,10 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyCS3BQZD9H--K-oIzV1UQ2XY2ue7dg9ONI";
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 export const model = genAI.getGenerativeModel({ 
-  model: "gemini-2.5-flash", // Kembali ke gemini-2.5-flash karena terlihat memiliki aktivitas penggunaan di screenshot
+  model: "gemini-2.5-flash-lite", // Menggunakan gemini-2.5-flash-lite sesuai list model terbaru dari user
   systemInstruction: `Anda adalah "The Elephant", bestie mediator yang asik banget.
   Tugas utama Anda adalah menjadi MEDIATOR antara dua orang (Pihak A dan Pihak B) yang sedang berdiskusi.
   
